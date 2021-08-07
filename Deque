@@ -1,0 +1,39 @@
+import java.util.*;
+
+
+//Deque是一个线性collection，支持在两端插入和移除元素。
+//Deque接口扩展(继承)了 Queue 接口。
+public class Duilie {
+
+    public static void main(String[] args) {
+        Deque<Integer> intque = new LinkedList<>();
+        intque.addFirst(1);
+        intque.addLast(2);
+        intque.offer(3);
+        intque.addFirst(4); //插入在头部
+        for (int i=intque.size();i > 0;i--) {//获得元素不删除
+            int t = intque.peek();
+            System.out.println(t);
+        }
+        while (intque.size() > 0) {//获得元素并删除,remove同样效果
+            int element = intque.poll();
+            System.out.println(element);
+        }
+    }
+}
+/*
+Queue方法	等效Deque方法
+add add(e)	addLast(e)
+offer(e)	offerLast(e)
+remove()	removeFirst()
+poll()	    pollFirst()
+element()	getFirst()
+peek()	    peekFirst()
+*/
+
+/*
+堆栈方法	等效Deque方法
+push(e)	addFirst(e)
+pop()	removeFirst()
+peek()	peekFirst()
+ */
