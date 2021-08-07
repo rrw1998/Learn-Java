@@ -1,0 +1,23 @@
+import java.util.*;
+
+
+//集合主要特性是元素不可重复。
+public class Jihe {
+    public static void main(String[] args){
+        HashSet<Integer> inths = new HashSet<>();
+        inths.add(1213);
+        inths.add(1213);
+        inths.add(12);
+        System.out.println(inths.contains(12));//查询
+        System.out.println(inths.size());//集合大小
+        System.out.println(inths.isEmpty());//集合是否为空
+    }
+}
+
+
+/*
+output:
+true
+2
+false
+ */
