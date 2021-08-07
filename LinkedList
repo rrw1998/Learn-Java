@@ -1,0 +1,59 @@
+import java.util.*;
+
+//链表的一些方法
+//方法也适用于ArrayList
+
+public class Lianbiao {
+    public static void main(String[] args){
+        LinkedList<String> ll = new LinkedList<>();
+        ll.add("链表1");//add添加
+        ll.add("www");
+        System.out.println(ll.get(1));//get获得
+        ll.set(1,"wqw");//set 修改，要保证已有数据才能修改
+        System.out.println(ll.contains("www"));//contains 值查找
+//        ll.remove("wqw");
+        listByNormalFor(ll);//遍历需要自行写方法，普通for循环，增强for循环，Iterator迭代器
+    }
+    /**
+     * 通过快速随机访问遍历LinkedList
+     */
+    private static void listByNormalFor(LinkedList<String> list) {
+        // 记录开始时间
+        long start = System.currentTimeMillis();
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            String a = list.get(i);
+            System.out.println(a);
+        }
+        // 记录用时
+        long interval = System.currentTimeMillis() - start;
+        System.out.println("listByNormalFor：" + interval + " ms");
+    }
+
+    /**
+     * 通过增强for循环遍历LinkedList
+     * @param list
+     */
+    public static void listByStrengThenFor(LinkedList<Integer> list){
+        // 记录开始时间
+        long start = System.currentTimeMillis();
+        for (Integer i : list) { }
+        // 记录用时
+        long interval = System.currentTimeMillis() - start;
+        System.out.println("listByStrengThenFor：" + interval + " ms");
+    }
+
+    /**
+     * 通过快迭代器遍历LinkedList
+     */
+    private static void listByIterator(LinkedList<Integer> list) {
+        // 记录开始时间
+        long start = System.currentTimeMillis();
+        for(Iterator iter = list.iterator(); iter.hasNext();) {
+            iter.next();
+        }
+        // 记录用时
+        long interval = System.currentTimeMillis() - start;
+        System.out.println("listByIterator：" + interval + " ms");
+    }
+}
