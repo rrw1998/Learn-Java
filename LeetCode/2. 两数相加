@@ -1,0 +1,45 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int temp=0;
+        ListNode ll = new ListNode(-1);
+        ListNode o = ll;
+        while(l1!=null||l2!=null||temp!=0){
+            if(l1!=null){
+                temp += l1.val;
+                l1=l1.next;
+            }
+                
+            if(l2!=null){
+                temp += l2.val;
+                l2=l2.next;
+            }
+                
+            ll.next = new ListNode(temp%10);
+            temp = temp/10;
+            ll = ll.next;
+        }
+        return o.next;
+    }
+}
+
+
+/*
+输入：l1 = [0], l2 = [0]
+输出：[0]
+输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+输出：[8,9,9,9,0,0,0,1]
+
+每个链表中的节点数在范围 [1, 100] 内
+0 <= Node.val <= 9
+题目数据保证列表表示的数字不含前导零
+*/
