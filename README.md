@@ -1,3 +1,3 @@
 # Learn-Java
-Some Java algorithm problems；
-A green hand;
++ Some Java algorithm problems；
++ A green hand;
