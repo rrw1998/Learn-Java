@@ -1,2 +1,3 @@
 # Learn-Java
-This is my way about a little Java.
++ Some Java algorithm problems；
++ A green hand;
